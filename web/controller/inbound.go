@@ -234,7 +234,7 @@ func (a *InboundController) resetClientTraffic(c *gin.Context) {
 
 	needRestart := true
 
-	needRestart, err = a.inboundService.ResetClientTraffic(id, email)
+	//needRestart, err = a.inboundService.ResetClientTraffic(id, email)
 	if err != nil {
 		jsonMsg(c, "Something went wrong!", err)
 		return
