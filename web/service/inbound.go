@@ -316,7 +316,15 @@ func (s *InboundService) UpdateInbound(inbound *model.Inbound) (*model.Inbound, 
 	if err != nil {
 		return inbound, false, err
 	}
-
+	if oldInbound.Up != 0 && inbound.Up != 0 {
+		oldInbound.Up = inbound.Up
+	}
+	if oldInbound.Down != 0 && inbound.Down != 0 {
+		oldInbound.Up = inbound.Up
+	}
+	if oldInbound.Total != 0 && inbound.Total != 0 {
+		oldInbound.Up = inbound.Up
+	}
 	// oldInbound.Up = inbound.Up
 	// oldInbound.Down = inbound.Down
 	// oldInbound.Total = inbound.Total
