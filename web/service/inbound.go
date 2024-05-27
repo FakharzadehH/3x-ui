@@ -317,9 +317,9 @@ func (s *InboundService) UpdateInbound(inbound *model.Inbound) (*model.Inbound, 
 		return inbound, false, err
 	}
 
-	oldInbound.Up = inbound.Up
-	oldInbound.Down = inbound.Down
-	oldInbound.Total = inbound.Total
+	// oldInbound.Up = inbound.Up
+	// oldInbound.Down = inbound.Down
+	// oldInbound.Total = inbound.Total
 	oldInbound.Remark = inbound.Remark
 	oldInbound.Enable = inbound.Enable
 	oldInbound.ExpiryTime = inbound.ExpiryTime
