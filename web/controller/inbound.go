@@ -225,24 +225,26 @@ func (a *InboundController) updateInboundClient(c *gin.Context) {
 }
 
 func (a *InboundController) resetClientTraffic(c *gin.Context) {
-	id, err := strconv.Atoi(c.Param("id"))
-	if err != nil {
-		jsonMsg(c, I18nWeb(c, "pages.inbounds.update"), err)
-		return
-	}
-	email := c.Param("email")
-
-	needRestart := true
-
-	//needRestart, err = a.inboundService.ResetClientTraffic(id, email)
-	if err != nil {
-		jsonMsg(c, "Something went wrong!", err)
-		return
-	}
 	jsonMsg(c, "traffic reseted", nil)
-	if needRestart {
-		a.xrayService.SetToNeedRestart()
-	}
+	return
+	// id, err := strconv.Atoi(c.Param("id"))
+	// if err != nil {
+	// 	jsonMsg(c, I18nWeb(c, "pages.inbounds.update"), err)
+	// 	return
+	// }
+	// email := c.Param("email")
+
+	// needRestart := true
+
+	// //needRestart, err = a.inboundService.ResetClientTraffic(id, email)
+	// if err != nil {
+	// 	jsonMsg(c, "Something went wrong!", err)
+	// 	return
+	// }
+	// jsonMsg(c, "traffic reseted", nil)
+	// if needRestart {
+	// 	a.xrayService.SetToNeedRestart()
+	// }
 }
 
 func (a *InboundController) resetAllTraffics(c *gin.Context) {
